@@ -1,8 +1,15 @@
-import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
 $(document).ready(function(){
-  console.log("hello");
+  $(".earthAge").submit(function(event) {
+    event.preventDefault();
+    mySpaceAge = new spaceAge();
+    console.log(birthDate);
+    age(todayNums, birthDate);
+    $("#ageOnEarth").write(myAge);
+
+  })
 })

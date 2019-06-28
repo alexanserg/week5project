@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    <p>hello</p>
+    <p>Hello</p>
+    <form class="earthAge">
+      <label for="birthMonth">Enter the month you were born (MM)</label><br>
+      <input id="birthMonth" type="number" name="birthMonth"><br>
+      <label for="birthDay">Enter the day you were born (DD)</label><br>
+      <input id="birthDay" type="number" name="birthDay"><br>
+      <label for="birthYear">Enter the month you were born (YYYY)</label><br>
+      <input id="birthYear" type="number" name="birthYear"><br>
 
+      <button id="getEarthAge" type="submit" name="button"></button>
+    </form>
+    <p id="ageOnEarth"></p>
+
+    <p>let age = function(todayNums,birthDate) {
+
+    if (todayNums[0] - this.birthDate[0] > 0) {
+      this.earthYears = todayNums[2]-this.birthDate[2];
+    } else if ((todayNums[0]this.-this.birthDate[0]===0) && (todayNums[1]-this.birthDate[1]>=0)) {
+      this.earthYears = todayNums[2]-this.birthDate[2];
+    } else {
+      this.earthYears = todayNums[2]-this.birthDate[2]-1;
+    }
+}
+}</p>
   </body>
 </html>
