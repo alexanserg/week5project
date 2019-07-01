@@ -1,22 +1,29 @@
-export class spaceAge {
-  constructor(birthDate, todaysDate, earthYears, expect, merYears, venYears, marYears, jupYears) {
-    this.birthDate = [$("#birthMonth").val(),$("#birthDay").val(),$("#birthYear").val()];
-    this.todaysDate =  new Date().toLocaleDateString().split("/");
-    this.earthYears = 0;
-    this.expect = averageLife - this.earthYears;
-    this.merYears = earthAge * .24;
-    this.venYears = earthage * .62;
-    this.marYears = earthAge * 1.88;
-    this.jupYears = earthAge * 11.86;
+todaysDate = new Date().toLocaleDateString()
+const todayArr = todaysDate.split("/");
+const todayNums = [parseInt(todayArr[0]),parseInt(todayArr[1]),parseInt(todayArr[2])];
+let birthDate = [5,24,1981]
+
+const age = function (birthDate,todayNums) {
+  if (todayNums[0] - birthDate[0] > 0) {
+    return todayNums[2]-birthDate[2];
+  } else if ((todayNums[0]-birthDate[0]===0) && (todayNums[1]-birthDate[1]>=0)) {
+    return todayNums[2]-birthDate[2];
+  } else {
+    return  todayNums[2]-birthDate[2]-1;
   }
-  let age = function(todayNums, this.birthDate) {
-    let  todayNums = [parseInt(todaysDate[0]),parseInt(todaysDate[1]),parseInt(todaysDate[2])];
-    if (todayNums[0] - this.birthDate[0] > 0) {
-      this.earthYears = todayNums[2]-this.birthDate[2];
-    } else if ((todayNums[0]this.-this.birthDate[0]===0) && (todayNums[1]-this.birthDate[1]>=0)) {
-      this.earthYears = todayNums[2]-this.birthDate[2];
-    } else {
-      this.earthYears = todayNums[2]-this.birthDate[2]-1;
-    }
 }
+
+let lifeExp = 72 - age(birthDate,todayNums);
+
+export class spaceAge {
+  constructor(merYears, merExp, venYears, venExp, marYears, marExp, jupYears, jupExp) {
+    this.merYears = age(birthDate,todayNums) * .24;
+    this.merExp = lifeExp * .24;
+    this.venYears = age(birthDate,todayNums) * .62;
+    this.venExp = lifeExp * 62;
+    this.marYears = age(birthDate,todayNums) * 1.88;
+    this.marExp = lifeExp * 1.88;
+    this.jupYears = age(birthDate,todayNums) * 11.86;
+    this.jupExp = lifeExp * 11.86;
+  }
 }
