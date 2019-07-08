@@ -25,16 +25,16 @@ Should calculate life expectancy based on the solar year of Mercury | 38 years o
 
 ## Setup/Installation Requirements
 * Clone the repository from github. CD to  the root directory of the project. Run
-** $ npm install
-** $ npm run build
-** $ npm run test
+* $ npm install
+* $ npm run build
+* $ npm run test
 * For Mac OS: package.json file must have
-** "scripts": {
+* "scripts": {
   ...
   "start": "npm run build; webpack-dev-server --open --mode development"'
   ...
 
-  ** for Windows package.json must read:   "scripts": {
+* for Windows package.json must read:   "scripts": {
     ...
     "start": "npm run build && webpack-dev-server --open --mode development"
     ...
