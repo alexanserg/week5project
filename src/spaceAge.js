@@ -15,7 +15,7 @@ export function age (birthDate,todayNums) {
 
 let lifeExp = 72 - age(birthDate,todayNums);
 
-class spaceAge {
+export class spaceAge {
   constructor(merYears, merExp, venYears, venExp, marYears, marExp, jupYears, jupExp) {
     this.merYears = age(birthDate,todayNums) / .24;
     this.merExp = lifeExp / .24;
