@@ -6,15 +6,14 @@ import { birthDate } from "../src/spaceAge.js"
 import { spaceAge } from "../src/spaceAge.js"
 
 
-describe('age', function () {
-  it('should test that age in earth years is returned correctly', function() {
-    expect(age([5,24,1981],[7,4,2019])).toEqual(38);
-  });
-})
+
 describe("spaceAge", function() {
   const mySpaceAge = new spaceAge();
+  it('should test that age in earth years is returned correctly', function() {
+    expect(mySpaceAge.age([5,24,1981],[7,4,2019])).toEqual(38);
+  });
   it('should convert earth age to age on mercury', function() {
-    expect(mySpaceAge.merYears).toEqual(158.33333333333334);
+    expect(mySpaceAge.merAgeCalc()).toEqual(158.33333333333334);
   });
   it('should convert earth age to age on mars', function() {
     expect(mySpaceAge.marYears).toEqual(20.21276595744681);
@@ -35,6 +34,6 @@ describe("spaceAge", function() {
     expect(mySpaceAge.jupExp).toEqual(2.8667790893760543);
   });
   it('should convert life expectancy to years on mars', function() {
-    expect(mySpaceAge.marExp).toEqual(18.085106382978726);
+    expect(mySpaceAge.marExp).toEqual(61.29032258064516);
   });
 })
