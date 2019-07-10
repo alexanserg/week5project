@@ -6,4 +6,6 @@ import { spaceAge } from "./spaceAge.js"
 import './styles.css';
 
 $(document).ready(function(){
+  let mySpaceAge = new spaceAge();
+  console.log(mySpaceAge.todaysDate);
 })
