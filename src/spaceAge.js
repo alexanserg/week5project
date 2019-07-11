@@ -1,22 +1,28 @@
 
 export class SpaceAge {
-  constructor(birthDate, todaysDate, earthYears, lifeExp) {
-    this.birthDate=[5,24,1981];
+  constructor(birthDate) {
+    this.birthDate= birthDate;
     this.todaysDate = new Date().toLocaleDateString();
     this.todayArr = this.todaysDate.split("/");
     this.todayNums= [parseInt(this.todayArr[0]),parseInt(this.todayArr[1]),parseInt(this.todayArr[2])];
-    this.earthYears= earthYears;
-    this.lifeExp = 72 - this.earthYears;
+    this.earthYears= this.age();
+    this.lifeExp = this.lifeExpCalc();
+
   }
-  age(birthDate,todayNums) {
+  age() {
     if (this.todayNums[0] - this.birthDate[0] > 0) {
-      this.earthYears= this.todayNums[2]-this.birthDate[2];
+      return this.todayNums[2]-this.birthDate[2];
     } else if ((this.todayNums[0]-this.birthDate[0]===0) && (this.todayNums[1]-   this.birthDate[1]>=0)) {
-      this.earthYears= this.todayNums[2]-this.birthDate[2];
+      return this.todayNums[2]-this.birthDate[2];
     } else {
-      this.earthYears= this.todayNums[2]-this.birthDate[2]-1;
+      return this.todayNums[2]-this.birthDate[2]-1;
     }
   }
+
+  lifeExpCalc(){
+    return 72-this.age();
+  }
+
   merAgeCalc() {
     this.merYears = this.earthYears / .24;
   }

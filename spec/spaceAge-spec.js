@@ -7,7 +7,7 @@ import { SpaceAge } from "../src/spaceAge.js";
 
 
 describe("SpaceAge", function() {
-  let mySpaceAge = new SpaceAge();
+  let mySpaceAge = new SpaceAge([5,24,1981]);
   it('should test that age in earth years is returned correctly', function() {
     mySpaceAge.age();
     expect(mySpaceAge.earthYears).toEqual(38);
@@ -42,6 +42,6 @@ describe("SpaceAge", function() {
   });
   it('should convert life expectancy to years on mars', function() {
     mySpaceAge.marExpCalc();
-    expect(mySpaceAge.marExp).toEqual(61.29032258064516);
+    expect(mySpaceAge.marExp).toEqual(18.085106382978726);
   });
 })
